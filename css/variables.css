@@ -84,12 +84,12 @@
   /* Layout */
   --content-width: 44rem;
   --content-margin: var(--space-6);
-  --body-margin: 0.5rem;
+  --body-margin: 2rem;
 
   /* Text */
   --color-link: var(--indigo);
   --body-color: var(--color);
-  --headings-font-weight: 300;
+  --headings-font-weight: initial;
   --headings-font-family: var(--font-sans-serif);
   --body-font-size: 1.25rem;
   --bg-mark: var(--gray-3)
@@ -121,6 +121,6 @@
     --h5: var(--font-4);
     --h6: var(--font-2);
     --body-font-size: 1rem;
-    --body-margin: 1.25rem;
+    --body-margin: 1rem;
   }
 }
