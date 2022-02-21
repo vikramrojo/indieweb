@@ -2,12 +2,10 @@
 layout: base
 ---
 <main>
-    <article class="h-entry">
-        <h1 class="p-name">{{ title }}</h1>
-        {% include partials/h-card.html %}
-        {% include partials/time %}
-        <div class="e-content">{{ content | safe }}</div>
-
-    </article>
-{% include partials/webmentions %}
+  <article>
+    <h1>{{ title }}</h1>
+    {% include partials/h-card %}
+    {% include partials/time %}
+    <div>{{ content | safe }}</div>
+  </article>
 </main>

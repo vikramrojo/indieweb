@@ -12,6 +12,8 @@
     <title>{% if title %}{{ title }}{% else %}{{fallbackTitle | strip_html }}{% endif %}</title>
     <meta name="description" content="{{ site.description }}">
     <link rel="icon" href="/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@275&family=Piazzolla:wght@225&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/trim.css">
     
     <!--IndieWeb-->
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
@@ -19,12 +21,10 @@
     <link rel="webmention" href="/11ndieweb/webmention">
     <link rel="micropub" href="/11ndieweb/micropub">
     <!--Style-->
-    {% include partials/style.html %}
   </head>
 
   <body>
     {% include partials/header.html %}
         {{ content | safe }}
-    {% include partials/footer %}
   </body>
 </html>

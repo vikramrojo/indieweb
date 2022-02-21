@@ -1,0 +1,93 @@
+:root {
+  /* Tokens */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-7: 2rem; /* 32px */
+  --space-8: 3rem; /* 48px */
+  --space-9: 4rem; /* 64px */
+  --space-10: 6rem; /* 96px */
+  --space-11: 8rem; /* 128px */
+  --space-12: 16rem; /* 256px */
+
+  --font-1: 0.75rem; /* 12px */
+  --font-2: 0.875rem; /* 14px */
+  --font-3: 1rem; /* 16px */
+  --font-4: 1.125rem; /* 18px */
+  --font-5: 1.25rem; /* 20px */
+  --font-6: 1.5rem; /* 24px */
+  --font-7: 2rem; /* 32px */
+  --font-8: 3rem; /* 48px */
+  --font-9: 4rem; /* 64px */
+  --font-10: 5rem; /* 80px */
+  --font-11: 6rem; /* 96px */
+  --font-12: 8rem; /* 128px */
+
+  --h1: var(--font-9);
+  --h2: var(--font-8);
+  --h3: var(--font-7);
+  --h4: var(--font-6);
+  --h5: var(--font-2);
+  --h6: var(--font-1);
+
+  /* Colors */
+  --white: white;
+  --gray-0: #f8f9fa;
+  --gray-1: #f1f3f5;
+  --gray-2: #e9ecef;
+  --gray-3: #dee2e6;
+  --gray-4: #ced4da;
+  --gray-5: #adb5bd;
+  --gray-6: #868e96;
+  --gray-7: #495057;
+  --gray-8: #343a40;
+  --gray-9: #212529;
+  --black: black;
+  --red: #f03e3e;
+  --pink: #d6336c;
+  --grape: #ae3ec9;
+  --violet: #7048e8;
+  --indigo: #4263eb;
+  --blue: #1c7ed6;
+  --cyan: #1098ad;
+  --teal: #0ca678;
+  --green: #37b24d;
+  --lime: #74b816;
+  --yellow: #f59f00;
+  --orange: #f76707;
+
+  /* Modifiers */
+  --darken: rgba(0, 0, 0, 0.1);
+  --darken-more: rgba(0, 0, 0, 0.5);
+  --lighten: rgba(255, 255, 255, 0.1);
+  --lighten-more: rgba(255, 255, 255, 0.5);
+  --shadow: rgba(80, 80, 80, 0.1);
+  --shadow-more: rgba(80, 80, 80, 0.5);
+
+  /* Initialize */
+  --bg: var(--gray-1);
+  --color: var(--gray-9);
+  --border: initial;
+  --font-sans-serif: 'Mulish', sans-serif;
+  --font-serif: 'Piazzolla', serif;
+  --font-system: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
+  --font-monospace: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --font-family: var(--font-sans-serif);
+  --line-height: 1.25;
+  --body-line-height: 1.25;
+  --headings-line-height: 1.25;
+
+  /* Layout */
+  --content-width: 1080px;
+  --content-margin: var(--space-6);
+
+  /* Text */
+  --color-link: var(--indigo);
+  --headings-font-weight: 300;
+  --headings-font-family: var(--font-sans-serif);
+  --body-font-size: 1.25rem;
+}

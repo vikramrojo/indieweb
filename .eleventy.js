@@ -8,6 +8,7 @@ module.exports = function (eleventyConfig) {
   // Passthrough files
   eleventyConfig.addPassthroughCopy({ "www/images": "images" });
   eleventyConfig.addPassthroughCopy("www/**/*.css");
+  eleventyConfig.addPassthroughCopy("css/*.css");
   eleventyConfig.addPassthroughCopy({ "www/admin": "admin" });
   eleventyConfig.addPassthroughCopy("www/favicon.*");
 

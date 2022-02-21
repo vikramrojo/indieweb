@@ -1,0 +1,43 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--headings-font-family);
+  line-height: var(--headings-line-height);
+  font-weight: var(--headings-font-weight);
+  margin-bottom: var(--content-margin);
+}
+
+h1, .h1 { font-size: var(--h1);}
+h2, .h2 { font-size: var(--h2);}
+h3, .h3 { font-size: var(--h3);}
+h4, .h4 { font-size: var(--h4);}
+h5, .h5 { font-size: var(--h5);}
+h6, .h6 { font-size: var(--h6);}
+
+body {
+  background-color: var(--bg, var(--body-bg-color));
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-size: var(--body-font-size);
+  color: var(--body-color);
+  line-height: var(--line-height);
+}
+
+p {
+  line-height: var(--body-line-height);
+  margin-bottom: var(--content-margin);
+}
+
+a {
+  color: var(--color-link);
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-serif);
+}
+
+a:active, a:hover {
+  filter: brightness(0.9);
+  text-decoration: underline;
+}
+
+em {
+  font-family: var(--font-serif);
+}
