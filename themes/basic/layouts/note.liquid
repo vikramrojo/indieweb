@@ -4,14 +4,16 @@ layout: base
 <main>
   <article>
   {% include partials/h-card %}
-  {% include partials/time %}
-    <div>
-      {{ content | safe }}
-
-      {% for url in photo %}
-          <img src="{{ url }}" alt="image">
-      {% endfor %}
-
-    </div>
+    <h3>{{ content | safe }}</h3>
+    {% for url in photo %}
+    <img src="{{ url }}" alt="image">
+    {% endfor %}
+    <a href="{{ url }}">
+      <mark>Noted
+        <time datetime="{{date | date: "iso" }}">
+          {{ date | date: "%a %b %d, %Y" }}
+        </time>
+      </mark>
+    </a>
   </article>
 </main>

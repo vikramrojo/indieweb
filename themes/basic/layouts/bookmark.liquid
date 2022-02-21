@@ -1,7 +1,18 @@
 ---
-layout: layouts/note
+layout: base
 ---
-
-{% include partials/context-bookmark %}
-
-{{ content | safe }}
+<main>
+  <article>
+    <h3>{{ title }}</h3>
+    {% include partials/h-card %}
+    <div>{{ content | safe }}</div>
+    <sup><a href="{{ bookmark-of }}">{{ bookmark-of }}</a></sup><br/>
+    <a href="{{ url }}">
+      <mark>Bookmarked
+        <time datetime="{{date | date: "iso" }}">
+          {{ date | date: "%a %b %d, %Y" }}
+        </time>
+      </mark>
+    </a>
+  </article>
+</main>

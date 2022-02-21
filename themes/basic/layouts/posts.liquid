@@ -8,22 +8,42 @@ eleventyExcludeFromCollections: true
     {% assign reactions = webmentions.children | where: "wm-target", post.url %}
     <article>
       {% include partials/h-card %}
-      <time datetime="{{post.date | date: "iso" }}">
-        <mark>{{ post.date | date: "%a %b %d, %Y" }}</mark>
-      </time>  
-      <br />
       {% case post.data.type %}
         {% when "article" %}
-          <a href="{{ post.url }}">[Article]</a>
-          {{post.data.title }}
+          <a href="{{ post.url }}">
+            <mark>Articled
+              <time datetime="{{post.date | date: "iso" }}">
+                {{ post.date | date: "%a %b %d, %Y" }}
+              </time>
+            </mark>
+          </a>
+          <h4>
+            {{post.data.title }}
+          </h4>
+          <div>{{post.templateContent }}</div>
         {% when "bookmark" %}
-          <a href="{{ post.url }}">[Bookmark]</a>
-          {{ post.data.title }}
-          <sup><a href="{{ post.data.bookmark-of }}">Link</a></sup>
+          <a href="{{ post.url }}">
+            <mark>Bookmarked
+              <time datetime="{{post.date | date: "iso" }}">
+                {{ post.date | date: "%a %b %d, %Y" }}
+              </time>
+            </mark>
+          </a>
+          <h4>
+            {{ post.data.title }}
+            <sup><a href="{{ post.data.bookmark-of }}">Link</a></sup>
+          </h4>
+          <div>{{post.templateContent }}</div>
         {% when "note" %}
-        <a href="{{ post.url }}">[Note]</a>
+          <a href="{{ post.url }}">
+            <mark>Noted
+              <time datetime="{{post.date | date: "iso" }}">
+                {{ post.date | date: "%a %b %d, %Y" }}
+              </time>
+            </mark>
+          </a>
+            <h4>{{post.templateContent }}</h4>
       {% endcase %}
-      <div>{{post.templateContent }}</div>
     </article>
   {% endfor %}
 </main>

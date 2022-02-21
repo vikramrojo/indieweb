@@ -79,7 +79,7 @@
   --font-family: var(--font-sans-serif);
   --line-height: 1.25;
   --body-line-height: 1.25;
-  --headings-line-height: 1.25;
+  --headings-line-height: 1.5;
 
   /* Layout */
   --content-width: 1080px;

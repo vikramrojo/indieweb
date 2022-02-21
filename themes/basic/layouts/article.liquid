@@ -3,9 +3,15 @@ layout: base
 ---
 <main>
   <article>
-    <h1>{{ title }}</h1>
+    <h3>{{ title }}</h3>
     {% include partials/h-card %}
-    {% include partials/time %}
     <div>{{ content | safe }}</div>
-  </article>
+    <a href="{{ url }}">
+      <mark>Noted
+        <time datetime="{{date | date: "iso" }}">
+          {{ date | date: "%a %b %d, %Y" }}
+        </time>
+      </mark>
+    </a>
+</article>
 </main>
