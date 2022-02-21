@@ -87,7 +87,17 @@
 
   /* Text */
   --color-link: var(--indigo);
+  --body-color: var(--color);
   --headings-font-weight: 300;
   --headings-font-family: var(--font-sans-serif);
   --body-font-size: 1.25rem;
+  --bg-mark: var(--gray-3)
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--gray-9);
+    --color: var(--gray-1); 
+    --bg-mark: var(--gray-7) 
+  }
 }

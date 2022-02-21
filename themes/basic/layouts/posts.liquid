@@ -3,44 +3,27 @@ layout: base
 eleventyExcludeFromCollections: true
 ---
 <main>
-  <h3>A collection of thoughts.</h3>
+  <h3>Weblog.</h3>
   {% for post in posts %}
     {% assign reactions = webmentions.children | where: "wm-target", post.url %}
     <article>
-      <a href="{{ post.url }}"> 
-      {% include partials/h-card.liquid %}
+      {% include partials/h-card %}
+      <time datetime="{{post.date | date: "iso" }}">
+        <mark>{{ post.date | date: "%a %b %d, %Y" }}</mark>
+      </time>  
+      <br />
       {% case post.data.type %}
         {% when "article" %}
-          <h3>{{post.data.title }}</h3>
-          <div>{{post.templateContent }}
-          </div>
-        {% when "reply" %}
-          <div>
-            {% include icons/reply.svg %}<em> Replied to <a href="{{ post.data.in-reply-to }}">{{ post.data.title }}</a></em>
-          </div>
-          <div>{{ post.templateContent }}</div>
-        {% when "repost" %}
-          <div>
-            {% include icons/share.svg %}<em> Shared <a href="{{ post.data.repost-of }}">{{ post.data.title }}</a></em>
-          </div>
-          <div>{{ post.templateContent }}</div>
+          <a href="{{ post.url }}">[Article]</a>
+          {{post.data.title }}
         {% when "bookmark" %}
-          <div>
-            {% include icons/bookmark.svg %}<em> Bookmarked <a href="{{ post.data.bookmark-of }}">{{ post.data.title }}</a></em>
-          </div>
-          <div>{{ post.templateContent }}</div>
+          <a href="{{ post.url }}">[Bookmark]</a>
+          {{ post.data.title }}
+          <sup><a href="{{ post.data.bookmark-of }}">Link</a></sup>
         {% when "note" %}
-        <div>{{ post.templateContent }}</div>
-        {% when "favorite" %}
-          <div>
-            {% include icons/favorite.svg %} <em><a href="{{ post.data.like-of }}">{% if post.data.title %}{{ post.data.title }}{% else %}{{ post.data.like-of }}{% endif %}</a></em>
-          </div>
-          <div>{{ post.templateContent }}</div>
+        <a href="{{ post.url }}">[Note]</a>
       {% endcase %}
-      </a>
-      <time datetime="{{post.date | date: "iso" }}">
-      {{ post.date | date: "%a %b %d, %Y" }}
-      </time>
+      <div>{{post.templateContent }}</div>
     </article>
   {% endfor %}
 </main>
