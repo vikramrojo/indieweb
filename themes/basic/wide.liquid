@@ -1,0 +1,35 @@
+{%- for post in collections.posts -%}
+  {%- if page.url == post.url -%}
+    {%- assign fallbackTitle = post.templateContent -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if title %}{{ title }}{% else %}{{fallbackTitle | strip_html }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="icon" href="/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@275&family=Piazzolla:wght@225&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/trim.css">
+    <style>
+      :root {
+        --content-width: 84rem;
+      }
+    </style>
+    
+    <!--IndieWeb-->
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <link rel="webmention" href="/11ndieweb/webmention">
+    <link rel="micropub" href="/11ndieweb/micropub">
+    <!--Style-->
+  </head>
+
+  <body>
+    {% include partials/header %}
+        {{ content | safe }}
+  </body>
+</html>
