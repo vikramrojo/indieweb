@@ -10,7 +10,7 @@ layout: base
     {% endfor %}
     <a href="{{ url }}">
       <mark>Noted
-        <time datetime="{{date | date: "iso" }}">
+        <time datetime="{{ date | date: "iso" }}">
           {{ date | date: "%a %b %d, %Y" }}
         </time>
       </mark>
