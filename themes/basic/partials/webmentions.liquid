@@ -1,29 +1,37 @@
 {% assign reply_counter = 0 %}
 {% assign reaction_counter = 0 %}
-  {% for webmention in webmentions.children %}
-    {% assign target = webmention.wm-target | relative %}
-    {% if target == page.url %}
+{% for webmention in webmentions.children %}
+  {% assign target = webmention.wm-target | relative %}
+  {% if target == page.url %}
     <!--List any other reactions-->
-      {% if webmention.wm-property != "in-reply-to" %}
-        {% if reaction_counter == 0 %}
-          <h4>Reactions</h4>
-          {% assign reaction_counter = 1 %}
-        {% endif %}
-        {% if webmention.author.url %}<a rel="nofollow" href="{{ webmention.author.url }}" title="{{ webmention.author.name }}, {{webmention.wm-property}}">{% endif %}{% if webmention.author.photo %}<img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}">{% endif %}{% if webmention.author.url %}</a>{% endif %}
+    {% if webmention.wm-property != "in-reply-to" %}
+      {% if reaction_counter == 0 %}
+        <hr />
+        <h5>Reactions</h5>
+        {% assign reaction_counter = 1 %}
       {% endif %}
-    <!--List Comments-->
-        {% if webmention['wm-property'] == "in-reply-to" %}
-            {% if reply_counter == 0 %}
-                <h2>Comments</h2>
-                {% assign reply_counter = 1 %}
-            {% endif %}
-        <article>
-            <section>
-                <h3>{% if webmention.author.url %}<a rel="nofollow" href="{{ webmention.author.url }}">{% endif %}{% if webmention.author.photo %}<img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="36" height="36">{% endif %}{{ webmention.author.name }}{% if webmention.author.url %}</a>{% endif %}</h3>
-                <time><a rel="nofollow" href="{{ webmention.url }}">{{ webmention.published | date() }}</a></time>
-            </section>
-                {% if webmention.content.html %}<div>{{ webmention.content.html | safe }}</div>{% endif %}
-        </article>
-        {% endif %}
+      {% if webmention.author.url %}<a rel="nofollow" href="{{ webmention.author.url.0 }}" title="{{ webmention.author.name }}, {{webmention.wm-property}}">{% endif %}
+      {% if webmention.author.photo %}<img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="40" height="40">{% endif %}
+      {% if webmention.author.url %}</a>{% endif %}
     {% endif %}
-  {% endfor %}
+    <!--List Comments-->
+    {% if webmention['wm-property'] == "in-reply-to" %}
+      {% if reply_counter == 0 %}
+        <hr />
+        <h4>Comments</h4>
+        {% assign reply_counter = 1 %}
+      {% endif %}
+      <article>
+        <section>
+          <h4>
+            {% if webmention.author.url %}<a rel="nofollow" href="{{ webmention.author.url.0 }}">{% endif %}
+            {% if webmention.author.photo %}<img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="40" height="40">{% endif %}
+            {{ webmention.author.name }}{% if webmention.author.url %}</a>{% endif %}
+          </h4>
+          <time><a rel="nofollow" href="{{ webmention.url }}">{{ webmention.published | date() }}</a></time>
+        </section>
+          {% if webmention.content.html %}<p>{{ webmention.content.html | safe }}</p>{% endif %}
+      </article>
+    {% endif %}
+  {% endif %}
+{% endfor %}
