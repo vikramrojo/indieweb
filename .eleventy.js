@@ -11,6 +11,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css/*.css");
   eleventyConfig.addPassthroughCopy({ "www/admin": "admin" });
   eleventyConfig.addPassthroughCopy("www/favicon.*");
+  eleventyConfig.addPassthroughCopy({ "img": "images" });
 
   // Filters
   eleventyConfig.addFilter("where", function (arr, key, value) {
