@@ -42,7 +42,10 @@ eleventyExcludeFromCollections: true
               </time>
             </mark>
           </a>
-            <h4>{{post.templateContent }}</h4>
+          {% for url in post.data.photo %}
+            <img src="{{ url }}" alt="image">
+          {% endfor %}        
+          <h4>{{post.templateContent }}</h4>
       {% endcase %}
     </article>
   {% endfor %}
