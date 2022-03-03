@@ -5,4 +5,4 @@ Product is 99% perspiration, validating the specifics and sweating the details. 
 
 But the problem with inspiration is that it’s deceptively vague. Once subjected to the specifics of audience, feature set, scale, effort, marketing and so on, things start to look very different.
 
-What usually remains is being inspired to solve customer problems so why not start there. Sure a solution might speak action but it’s mileage varies.
+What usually remains is the motivation to solve customer problems so why not start there? Sure a solution might spark action but mileage varies.
