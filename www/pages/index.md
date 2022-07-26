@@ -27,7 +27,7 @@ Beta releases come with unique challenges, namely shipping something valuable wh
 
 Logs are a common customer request with SaaS. But understanding limitations of existing systems and the range of possible users takes more effort to uncover. Working alongside a team assembled from engineering and support, I led the discovery and documentation of session errors. This was quickly followed by a UI solution. Rather than begin with UI, focusing on error handling proved to be a sound foundational investment.
 
-#### [Easier onboarding with Setup Links](https://workos.com/changelog/easier-onboarding-with-setup-links) and [ Support Roles | WorkOS](https://workos.com/changelog/new-support-role)
+#### [Easier onboarding with Setup Links](https://workos.com/changelog/easier-onboarding-with-setup-links) and [ Support Roles](https://workos.com/changelog/new-support-role)
 
 Gleaned from customer research, I spotted and evangelized the need for simple Setup Links to our Admin Portal. While we typically hope most customers fully integrate with our solutions, there are often exceptions driven by playbooks and organization structures. Prioritizing one-offs doesn’t always fit with a product roadmap but early product validation showed that Setup Links and the related feature of Support Roles, stood to drastically change product usage. The result was almost immediate adoption and updating of customer playbooks.
 
